@@ -1,145 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Doodle Jump</title>
   <link href='./style.css' rel='stylesheet'>
 </head>
 <body>
-	<canvas width="100%" height="100%" id="canvas1"></canvas>
+    
+    <div id = 'gamePage' >
+		<canvas id="canvas"> </canvas>
+	</div>
+	<div id = 'endBox' >
+		<h2 class = 'endText' > Game Over! </h2>
+        <a href = './index.html'> 
+			<button class='tryAgainBtn'> Try Again </button>
+		</a>
+	</div>
+
 </body>
-<script>
-	var c=document.getElementById("canvas1");
-	var ctx=c.getContext("2d");
-  c.height=window.innerHeight*0.98;
-	c.width=window.innerWidth*0.37;
-
-  var f=0;var f1=0;var start=1;
-   window.addEventListener("keyup",
-    function(event)
-    {
-      if(event.keyCode=="39")
-      {
-        f=20;
-        circle1.x+=f;
-      }
-      else if(event.keyCode=="37")
-      {
-        f1=-20;
-        circle1.x+=f1;
-      }
-      else if(event.keyCode=="38")
-      {
-        circle1.dy=-3;
-        start=0;
-        for(var kk=0;kk<array.length;kk++){
-          array[kk].dy=2;
-          array[kk].yact=array[kk].y+130;
-        }
-       }
-
-    });
-
-   var dx1=0,dy1=0;
-
-  function Rect(x,y,w,h,dy,yact)
-  {
-    this.x=x;
-    this.y=y;
-    this.w=w;
-    this.h=h;
-    this.dy=dy;
-    this.yact=yact;
-    this.draw=function()
-    {
-      ctx.beginPath();
-      ctx.fillStyle="#FFA07A";
-      ctx.fillRect(this.x,this.y,this.w,this.h);
-    }
-    this.update=function()
-    {
-      this.draw();
-      this.y+=this.dy;
-      if(this.y>=this.yact){
-        this.dy=0;
-      }
-    }
-  }
-
-  function Circle(x,y,yact,dy,ymax)
-  {
-    this.x=x;
-    this.y=y;
-    this.dy=dy;
-    this.yact=yact;
-    this.ymax=ymax;
-
-    this.draw=function()
-    {
-      ctx.beginPath();
-      ctx.fillStyle="#F1C40F  ";
-      ctx.arc(this.x,this.y,10,0,2*Math.PI);
-      ctx.fill();
-      ctx.stroke();
-    }
-    this.update=function()
-    {
-      this.draw();
-      this.y+=this.dy;
-      if(this.y<=this.yact-150)
-        {this.dy=-this.dy;}
-      if(this.y>=c.height-5){this.dy=0;}
-      if(start==0 && this.y>=c.height-5){alert('Game Over!!')};
-    }
-  }
-
-  var array=[];var y2=c.height-50;
-  for(var k=0;k<100;k++)
-  {
-  var x2=Math.random()*(c.width-84)+2;
-  y2-=50;
-  array.push(new Rect(x2,y2,80,15,0,y2+160));
-  }
-
-  var x1=80,y1=c.height-10;
-  var circle1=new Circle(x1,y1,y1,0,y1);
-  var g=0;
-
-  var x10,x11,y10,y11;
-  function getDistance(x10,x11,y10,y11){
-    xf=x11-x10;
-    yf=y11-y10;
-    return Math.sqrt(Math.pow(xf,2) + Math.pow(yf,2)) ;
-  }
-
-  function animate()
-  {
-     requestAnimationFrame(animate);
-     ctx.clearRect(0,0,innerWidth,innerHeight);
-     ctx.font="20px Arial";
-     ctx.fillStyle="black";
-     ctx.fillText("SCORE:",10,20);
-     ctx.font="20px Arial";
-     ctx.fillStyle="black";
-     ctx.fillText(g,90,20);
-     for(var t=0;t<array.length;t++)
-    {
-     array[t].update();
-     if(getDistance(0,0,circle1.y+5,array[t].yact)<=2 && array[t].yact<=c.height-15 && circle1.x+5>=array[t].x && circle1.x-5<=array[t].x+80)
-        {
-          circle1.dy=0;
-        }
-     }
-     
-     circle1.update();
-  }
- 
-  var q=setInterval(score,200);
-  function score()
-  {
-    g++;
-  }
-
-  animate();
-
-</script>
+<script src = "./index.js" > </script>
 </html>

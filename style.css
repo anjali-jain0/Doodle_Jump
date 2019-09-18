@@ -1,6 +1,45 @@
-#canvas1
-	{
-		border:1px solid black;
+#canvas
+{
+	border:1px solid black;
     margin-left:420px;
     background-color: #F8F9F9;
-	}	
+}
+#endBox
+{
+	display:none;
+	height:370px;
+	width:650px;
+	position:absolute;
+	top:50px;
+	left:350px;
+	background-color:rgba(207,210,210,1);
+}
+.startBox
+{
+	height:370px;
+	width:650px;
+	position:relative;
+	top:50px;
+	left:350px;
+	background-color:rgba(207,210,210,1);
+}
+.startBtn , .tryAgainBtn
+{
+	background-color:rgba(222,29,145,1);
+	height:45px;
+	width:90px;
+	position:absolute;
+	top:270px;
+	left:280px;
+	margin:0;
+	color:white;
+	font-family:verdana;
+	border:none;
+}
+.startText , .endText
+{
+	padding-top:25px;
+	font-family:verdana;
+	text-align:center;
+}
+	
