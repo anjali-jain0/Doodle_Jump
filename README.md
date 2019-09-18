@@ -1,5 +1,5 @@
 
 # Doodle_Jump
-![gif|90x10,20%](doodle.gif)
+![gif](doodle.gif | width=100)
 A Doodle Jump Game with Canvas
 
