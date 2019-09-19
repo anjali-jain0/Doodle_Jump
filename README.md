@@ -1,6 +1,6 @@
 
 # Doodle_Jump
-<img src="doodle.gif" width="700px" height="500px" />
+<img src="doodle.gif" width="800px" height="460px" />
 A Doodle Jump Game with Html5 and Canvas
 
 
