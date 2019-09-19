@@ -12,6 +12,7 @@ It contains logic for :
 * Randomly creating new reachable, yet dispersed blocks
 * Shift in platform blocks to keep the ball in view
 * Tracking the score
+* Conditions for Game Over
 
 ## Technology
  
